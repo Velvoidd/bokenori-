@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container mt-5">
+
+  
+
+    <div class="card mt-3">
+        <div class="card-body">
+            <h2>Заявка одобрена!</h2> <br><br>
+            <h5 class="card-title">Детали профиля:</h5>
+            <p class="card-text"><strong>Имя пользователя:</strong> {{ custom_user.username }}</p>
+            <p class="card-text"><strong>Никнейм:</strong> {{ custom_user.nickname }}</p>
+            <p class="card-text"><strong>Ссылка на Discord сервер: </strong>   <a href="{{ custom_user.discord_link }}">{{ custom_user.discord_link }}</a></p>
+            <!-- Другие детали профиля CustomUser -->
+        </div>
+    </div>
+</div>
+
+{% endblock %}

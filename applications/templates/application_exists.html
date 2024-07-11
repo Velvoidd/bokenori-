@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    
+    <div class="alert alert-warning" role="alert" style="background-color: rgba(117, 80, 6, 0.1)">
+        <h4 class="alert-heading" >Вы уже отправили заявку!</h4>
+        <p>Ваша заявка уже была отправлена. Мы проверим ее в течении 12 часов. Обычно это занимает 15 минут.</p>
+        <hr>
+        <p class="mb-0">Ниже вы можете наблюдать текущий статус своей заявки:</p>
+        <br>
+        <p>Статус вашей заявки: <b>{{ status }}</b></p>
+    </div>
+    
+
+
+
+</div>
+{% endblock %}

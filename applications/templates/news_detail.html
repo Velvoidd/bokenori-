@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+
+            <div class="new-users">
+                
+                <div class="user-list">
+                <div class="card-body">
+                    <h1 class="card-title">{{ news.title }}</h1>
+                    <img src="{{ news.image.url }}" class="card-img-top mb-4" alt="{{ news.title }}">
+                    <p class="card-text">{{ news.content }}</p>
+                    <hr>
+                    <div class="d-flex justify-content-between">
+                        <p class="card-text"><small class="text-muted">Автор: {{ news.author }}</small></p>
+                        <p class="card-text"><small class="text-muted">Дата публикации: {{ news.date_published|date:"d F Y, H:i" }}</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

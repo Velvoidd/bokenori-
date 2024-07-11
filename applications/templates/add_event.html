@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mt-5">Создать ивент</h1>
+    <form method="post" class="mt-4">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="id_title" class="font-weight-bold">Название</label>
+            <input type="text" id="id_title" name="title" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="id_description" class="font-weight-bold">Описание</label>
+            <textarea id="id_description" name="description" class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="id_date" class="font-weight-bold">Дата</label>
+            <input type="date" id="id_date" name="date" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="id_status" class="font-weight-bold">Статус</label>
+            <select id="id_status" name="status" class="form-control">
+                <option value="upcoming">Ближайший</option>
+                <option value="current">Текущий</option>
+                <option value="past">Прошедший</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Сохранить</button>
+        <a href="#" class="btn btn-danger mt-3 ml-2" id="delete-event">Удалить</a>
+    </form>
+</div>
+{% endblock %}

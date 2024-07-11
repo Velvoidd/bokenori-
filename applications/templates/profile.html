@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <h2>Профиль пользователя</h2>
+    {% if custom_user %}
+    <p class="card-text"><strong>Имя пользователя:</strong> {{ custom_user.username }}</p>
+    <p class="card-text"><strong>Никнейм:</strong> {{ custom_user.nickname }}</p>
+    <!-- Добавьте другие поля профиля здесь -->
+    {% else %}
+    <p>Пользователь не найден.</p>
+    {% endif %}
+</div>
+{% endblock %}

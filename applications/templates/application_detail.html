@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="card mt-4">
+        <div class="card-body">
+            <h1 class="card-title">Детальная информация о заявке</h1>
+            <h2 class="card-title">Написал пользователь: <b>{{ application.user }}</b></h2>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>Ник:</strong> {{ application.nickname }}</li>
+                <li class="list-group-item"><strong>Возраст:</strong> {{ application.age }}</li>
+                <li class="list-group-item"><strong>Из какого источника узнали о проекте:</strong> {{ application.source }}</li>
+                <li class="list-group-item"><strong>На каких проектах вы участвовали до этого? Из-за чего вы ушли оттуда?:</strong> {{ application.previous_projects }}</li>
+                <li class="list-group-item"><strong>Что вы обычно делаете на таких серверах? Чем вы планируете заниматься здесь?:</strong> {{ application.activities }}</li>
+                <li class="list-group-item"><strong>Прочитал правила:</strong> {% if application.read_rules %}Да{% else %}Нет{% endif %}</li>
+                <li class="list-group-item"><strong>Вы коммуникабельный человек? Какой стиль игры вы предпочитаете? (Одиночный, командный):</strong> {{ application.communication_style }}</li>
+                <li class="list-group-item"><strong>Хотели бы вы участвовать в сюжетной линии проекта?:</strong> {% if application.participate_in_storyline %}Да{% else %}Нет{% endif %}</li>
+            </ul>
+            <form action="{% url 'update_application_status' pk=application.pk %}" method="post">
+                {% csrf_token %}
+                <div class="form-group mt-3">
+                    <label for="status"><strong>Статус заявки:</strong></label>
+                    <select name="status" id="status" class="form-control">
+                        <option value="pending" {% if application.status == 'pending' %}selected{% endif %}>Ожидание</option>
+                        <option value="approved" {% if application.status == 'approved' %}selected{% endif %}>Одобрено</option>
+                        <option value="rejected" {% if application.status == 'rejected' %}selected{% endif %}>Отклонено</option>
+                    </select>
+                </div>
+                <div class="form-group mt-3">
+                    <label for="discord_link"><strong>Ссылка на Discord:</strong></label>
+                    <input type="text" name="discord_link" id="discord_link" class="form-control" value="{{ application.discord_link }}">
+                </div>
+                <button type="submit" class="btn btn-primary">Сохранить статус и ссылку на Discord</button>
+            </form>
+            
+            <form action="{% url 'delete_application' pk=application.pk %}" method="post" class="mt-3">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger">Удалить заявку</button>
+            </form>
+{% endblock %}

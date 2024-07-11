@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="jumbotron" style="background-color: rgba(169, 169, 169, 0.144)">
+        <h1 class="display-4">Добро пожаловать на сервер BokeNori V+!</h1>
+        <p class="lead">Мы рады приветствовать вас в нашем уютном комьюнити Minecraft сервера. Здесь вы найдете множество увлекательных возможностей, которые сделают ваше время в игре незабываемым.</p>
+        <hr class="my-4">
+        <p>Мы стремимся создать дружелюбное и веселое сообщество, где каждый игрок может насладиться игрой вместе с другими участниками. У нас вы найдете интересные события, конкурсы, а также возможность взаимодействовать с другими игроками и развивать свой игровой мир.</p>
+        <a class="btn btn-primary btn-lg" href="{% url 'apply' %}" role="button">Присоединиться</a>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-md-6">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Планы нашего сервера</h5>
+                    <p class="card-text">Мы постоянно работаем над улучшением нашего сервера и добавлением новых функций. Ожидайте много интересных обновлений в ближайшем будущем!</p>
+                    <p class="card-text">Планируемые обновления включают в себя: новые мини-игры, уникальные ивенты, дополнительные возможности для игроков и многое другое!</p>
+                    <a href="{% url 'apply' %}" class="btn btn-primary">Присоединиться к серверу</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Стань частью нашего развивающегося сообщества!</h5>
+                    <p class="card-text">Присоединяйся к нам прямо сейчас и стань частью нашего дружелюбного комьюнити! Мы всегда рады новым игрокам и готовы приветствовать вас в нашем увлекательном мире Minecraft.</p>
+                    <a href="{% url 'apply' %}" class="btn btn-primary">Присоединиться к серверу</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Добавление информации о Discord в красивой ячейке -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Так же если вам нужна помощь, вы можете обратиться к нам</h5>
+                   <a href="https://discord.gg/KSz5w2esjr" class="btn btn-primary">Discord</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

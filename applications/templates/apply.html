@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Application</title>
+</head>
+<body>
+    <div class="new-users">
+        <h2>Заявка на сервер</h2>
+        <div class="user-list">
+          <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="nickname">Ваш игровой Ник-Нейм</label>
+                <input type="text" id="nickname" name="nickname" class="form-control" placeholder="Ник-Нейм" required>
+            </div>
+            <div class="form-group">
+                <label for="age">Возраст</label>
+                <input type="number" id="age" name="age" class="form-control" placeholder="Возраст" required>
+            </div>
+            <div class="form-group">
+                <label for="source">Из какого источника узнали о проекте</label>
+                <input type="text" id="source" name="source" class="form-control" placeholder="Источник" required>
+            </div>
+            <div class="form-group">
+                <label for="previous_projects">На каких проектах вы участвовали до этого? Из-за чего вы ушли оттуда?</label>
+                <input type="text" id="previous_projects" name="previous_projects" class="form-control" placeholder="Предыдущие проекты" required>
+            </div>
+            <div class="form-group">
+                <label for="activities">Что вы обычно делаете на таких серверах? Чем вы планируете заниматься здесь?</label>
+                <input type="text" id="activities" name="activities" class="form-control" placeholder="Активность" required>
+            </div>
+            <div class="form-group">
+                <label for="read_rules">Тщательно ли вы читали правила? Готовы ли вы соблюдать их?</label>
+                <input type="text" id="read_rules" name="read_rules" class="form-control" placeholder="Правила" required>
+            </div>
+            <div class="form-group">
+                <label for="communication_style">Вы коммуникабельный человек? Какой стиль игры вы предпочитаете? (Одиночный, командный)</label>
+                <input type="text" id="communication_style" name="communication_style" class="form-control" placeholder="Стиль игры" required>
+            </div>
+            <div class="form-group">
+                <label for="participate_in_storyline">Хотели бы вы участвовать в сюжетной линии проекта?</label>
+                <input type="text" id="participate_in_storyline" name="participate_in_storyline" class="form-control" placeholder="Сюжет">
+            </div>
+            <button type="submit" class="btn btn-primary">Отправить</button>
+        </form>
+    </form>
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="applicationModal" tabindex="-1" aria-labelledby="applicationModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="applicationModalLabel">Ошибка отправки заявки</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Вы уже отправили заявку. Пожалуйста, дождитесь ответа на предыдущую заявку.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  {% if already_submitted %}
+  <script>
+    // Открываем модальное окно, если пользователь уже отправил заявку
+    window.onload = function() {
+      var applicationModal = new bootstrap.Modal(document.getElementById('applicationModal'));
+      applicationModal.show();
+    };
+  </script>
+  {% endif %}
+</body>
+</html>
+{% endblock %}

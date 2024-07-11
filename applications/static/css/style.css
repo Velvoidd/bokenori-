@@ -1,0 +1,1774 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root{
+    --color-primary: #6C9BCF;
+    --color-danger: #FF0060;
+    --color-success: #1B9C85;
+    --color-warning: #F7D060;
+    --color-white: #fff;
+    --color-info-dark: #7d8da1;
+    --color-dark: #363949;
+    --color-light: rgba(132, 139, 200, 0.18);
+    --color-dark-variant: #677483;
+    --color-background: #f6f6f9;
+
+    --card-border-radius: 2rem;
+    --border-radius-1: 0.4rem;
+    --border-radius-2: 1.2rem;
+    --light-bg-color: #ffffff;
+    --light-text-color: #333333;
+    --card-padding: 1.8rem;
+    --padding-1: 1.2rem;
+
+    --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+.dark-mode-variables{
+    --color-background: #181a1e;
+    --color-white: #202528;
+    --color-dark: #edeffd;
+    --color-dark-variant: #a3bdcc;
+    --color-light: rgba(0, 0, 0, 0.4);
+    --box-shadow: 0 2rem 3rem var(--color-light);
+
+     /* Переопределение переменных цвета Bootstrap */
+     --bg-color: var(--color-background);
+     --text-color: var(--color-dark);
+     --primary-color: var(--color-dark-variant);
+     --secondary-color: var(--color-white);
+     --body-bg: var(--color-background);
+     --body-color: var(--color-dark);
+     --card-bg: var(--color-white);
+     --card-text-color: var(--color-dark);
+     --card-border-color: var(--color-dark);
+     --list-group-bg: var(--color-white);
+     --list-group-text-color: var(--color-dark);
+     --btn-bg: var(--color-dark-variant);
+     --btn-text-color: var(--color-white);
+     --btn-hover-bg: var(--color-dark);
+     --btn-hover-text-color: var(--color-white);
+     --form-bg: var(--color-white);
+     --form-text-color: var(--color-dark);
+     --form-border-color: var(--color-dark);
+     --input-bg: var(--color-white);
+     --input-text-color: var(--color-dark);
+     --input-border-color: var(--color-dark);
+     --input-focus-bg: var(--color-white);
+     --input-focus-text-color: var(--color-dark);
+     --input-focus-border-color: var(--color-dark);
+     --input-placeholder-color: var(--color-light);
+     background-color: var(--color-background-dark); /* Фон для тёмной темы */
+     color: var(--color-text-dark); /* Цвет текста для тёмной темы */
+}
+
+
+body {
+    background-color: var(--color-background);
+    color: var(--color-dark);
+}
+
+.card {
+    background-color: var(--color-white);
+    color: var(--color-dark);
+}
+
+.card-title,
+.card-text,
+.card-link,
+.card-header,
+.card-footer {
+    color: var(--color-dark);
+}
+
+
+.dark-card {
+    background-color: var(--card-bg-dark);
+    color: var(--card-text-color-dark);
+}
+
+.dark-card .card-title,
+.dark-card .card-text,
+.dark-card .card-link,
+.dark-card .card-header,
+.dark-card .card-footer {
+    color: var(--card-text-color-dark);
+}
+
+
+
+
+
+.dark-mode-variables .form-group input,
+.dark-mode-variables .form-group select,
+.dark-mode-variables .form-group textarea {
+    background-color: var(--color-background); /* Фоновый цвет поля ввода */
+    color: var(--color-dark-variant); 
+    border-color: var(--color-dark); /* Цвет границы поля ввода */
+}
+
+.dark-mode-variables .btn-primary {
+    background-color: var(--color-dark-variant); /* Цвет фона кнопки */
+    border-color: var(--color-dark-variant); /* Цвет границы кнопки */
+   /* Цвет текста кнопки */
+}
+
+.dark-mode-variables .btn-primary:hover {
+    background-color: var(--color-dark); /* Цвет фона кнопки при наведении */
+    border-color: var(--color-dark); /* Цвет границы кнопки при наведении */
+}
+
+
+.list-group-item {
+    background-color: var(--color-white);
+    color: var(--color-dark);
+}
+
+.btn {
+    background-color: var(--color-dark-variant);
+    color: var(--color-white);
+}
+
+.btn:hover {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    appearance: 0;
+    border: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 14px;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.88rem;
+    user-select: none;
+    overflow-x: hidden;
+    color: var(--color-dark);
+    background-color: var(--color-background);
+}
+
+a{
+    color: var(--color-dark);
+}
+
+img{
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+h1{
+    font-weight: 800;
+    font-size: 1.8rem;
+}
+
+h2{
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+h3{
+    font-weight: 500;
+    font-size: 0.87rem;
+}
+
+small{
+    font-size: 0.76rem;
+}
+
+p{
+    color: var(--color-dark-variant);
+}
+
+b{
+    color: var(--color-dark);
+}
+
+.text-muted{
+    color: var(--color-info-dark);
+}
+
+.primary{
+    color: var(--color-primary);
+}
+
+.danger{
+    color: var(--color-danger);
+}
+
+.success{
+    color: var(--color-success);
+}
+
+.warning{
+    color: var(--color-warning);
+}
+
+.container-custom{
+    display: grid;
+    width: 96%;
+    margin: 0 auto;
+    gap: 1.8rem;
+    grid-template-columns: 12rem auto 23rem;
+}
+
+aside{
+    height: 100vh;
+}
+
+aside .toggle{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.4rem;
+}
+
+aside .toggle .logo-custom{
+    display: flex;
+    gap: 0.5rem;
+}
+
+aside .toggle .logo-custom img{
+    width: 2rem;
+    height: 2rem;
+}
+
+aside .toggle .close{
+    padding-right: 1rem;
+    display: none;
+}
+
+aside .sidebar-custom{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-white);
+    box-shadow: var(--box-shadow);
+    border-radius: 15px;
+    height: 88vh;
+    position: relative;
+    top: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+aside .sidebar-custom:hover{
+    box-shadow: none;
+}
+
+aside .sidebar-custom a{
+    display: flex;
+    align-items: center;
+    color: var(--color-info-dark);
+    height: 3.7rem;
+    gap: 1rem;
+    position: relative;
+    margin-left: 2rem;
+    transition: all 0.3s ease;
+}
+
+aside .sidebar-custom a span{
+    font-size: 1.6rem;
+    transition: all 0.3s ease;
+}
+
+aside .sidebar-custom a:last-child{
+    position: absolute;
+    bottom: 2rem;
+    width: 100%;
+}
+
+aside .sidebar-custom a.active{
+    width: 100%;
+    color: var(--color-primary);
+    background-color: var(--color-light);
+    margin-left: 0;
+    
+}
+
+aside .sidebar-custom a.message{
+    width: 100%;
+    color: var(--color-primary);
+    margin-left: 0;
+}
+
+aside .sidebar-custom a.message::before{
+    content: '';
+    width: 6px;
+    height: 18px;
+}
+
+aside .sidebar-custom a.active::before{
+    content: '';
+    width: 6px;
+    height: 18px;
+    background-color: var(--color-primary);
+}
+
+aside .sidebar-custom a.active span{
+    color: var(--color-primary);
+    margin-left: calc(1rem - 3px);
+}
+
+aside .sidebar-custom a:hover{
+    color: var(--color-primary);
+}
+
+aside .sidebar-custom a:hover span{
+    margin-left: 0.6rem;
+}
+
+aside .sidebar-custom .message-count{
+    background-color: var(--color-danger);
+    padding: 2px 6px;
+    color: var(--color-white);
+    font-size: 11px;
+    border-radius: var(--border-radius-1);
+}
+
+main{
+    margin-top: 1.4rem;
+}
+
+main .analyse{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.6rem;
+}
+
+main .analyse > div{
+    background-color: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    margin-top: 1rem;
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+main .analyse > div:hover{
+    box-shadow: none;
+}
+
+main .analyse > div .status{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+main .analyse h3{
+    margin-left: 0.6rem;
+    font-size: 1rem;
+}
+
+main .analyse .progresss{
+    position: relative;
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+}
+
+main .analyse svg{
+    width: 7rem;
+    height: 7rem;
+}
+
+main .analyse svg circle{
+    fill: none;
+    stroke-width: 10;
+    stroke-linecap: round;
+    transform: translate(5px, 5px);
+}
+
+main .analyse .sales svg circle{
+    stroke: var(--color-success);
+    stroke-dashoffset: -30;
+    stroke-dasharray: 200;
+}
+
+main .analyse .visits svg circle{
+    stroke: var(--color-danger);
+    stroke-dashoffset: -30;
+    stroke-dasharray: 200;
+}
+
+main .analyse .searches svg circle{
+    stroke: var(--color-primary);
+    stroke-dashoffset: -30;
+    stroke-dasharray: 200;
+}
+
+main .analyse .progresss .percentage{
+    position: absolute;
+    top: -3px;
+    left: -1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+main .new-users{
+    margin-top: 1.3rem;
+}
+
+main .new-users .user-list{
+    background-color: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    margin-top: 1rem;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1.4rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+main .new-users .user-list:hover{
+    box-shadow: none;
+}
+
+main .new-users .user-list .user{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+main .new-users .user-list .user img{
+    width: 5rem;
+    height: 5rem;
+    margin-bottom: 0.4rem;
+    border-radius: 50%;
+}
+
+main .recent-orders{
+    margin-top: 1.3rem;
+}
+
+main .recent-orders h2{
+    margin-bottom: 0.8rem;
+}
+
+main .recent-orders table{
+    background-color: var(--color-white);
+    width: 100%;
+    padding: var(--card-padding);
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    border-radius: var(--card-border-radius);
+    transition: all 0.3s ease;
+}
+
+main .recent-orders table:hover{
+    box-shadow: none;
+}
+
+main table tbody td{
+    height: 2.8rem;
+    border-bottom: 1px solid var(--color-light);
+    color: var(--color-dark-variant);
+}
+
+main table tbody tr:last-child td{
+    border: none;
+}
+
+main .recent-orders a{
+    text-align: center;
+    display: block;
+    margin: 1rem auto;
+    color: var(--color-primary);
+}
+
+.right-section-custom{
+    margin-top: 1.4rem;
+}
+
+.right-section-custom .nav-custom{
+    display: flex;
+    justify-content: end;
+    gap: 2rem;
+}
+
+.right-section-custom .nav-custom button{
+    display: none;
+}
+
+.right-section-custom .dark-mode{
+    background-color: var(--color-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 1.6rem;
+    width: 4.2rem;
+    cursor: pointer;
+    border-radius: var(--border-radius-1);
+}
+
+.right-section-custom .dark-mode span{
+    font-size: 1.2rem;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.right-section-custom .dark-mode span.active{
+    background-color: var(--color-primary);
+    color: white;
+    border-radius: var(--border-radius-1);
+}
+
+.right-section-custom .nav-custom .profile{
+    display: flex;
+    gap: 2rem;
+    text-align: right;
+}
+
+.right-section-custom .nav-custom .profile .profile-photo{
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.right-section-custom .user-profile-custom{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 1rem;
+    background-color: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.right-section-custom .user-profile-custom:hover{
+    box-shadow: none;
+}
+
+.right-section-custom .user-profile-custom img{
+    width: 11rem;
+    height: auto;
+    margin-bottom: 0.8rem;
+    border-radius: 50%;
+}
+
+.right-section-custom .user-profile-custom h2{
+    margin-bottom: 0.2rem;
+}
+
+.right-section-custom .reminders{
+    margin-top: 2rem;
+}
+
+.right-section-custom .reminders .header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+}
+
+.right-section-custom .reminders .header span{
+    padding: 10px;
+    box-shadow: var(--box-shadow);
+    background-color: var(--color-white);
+    border-radius: 50%;
+}
+
+.right-section-custom .reminders .notification{
+    background-color: var(--color-white);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.7rem;
+    padding: 1.4rem var(--card-padding);
+    border-radius: var(--border-radius-2);
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.right-section-custom .reminders .notification:hover{
+    box-shadow: none;
+}
+
+.right-section-custom .reminders .notification .content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    width: 100%;
+}
+
+.right-section-custom .reminders .notification .icon{
+    padding: 0.6rem;
+    color: var(--color-white);
+    background-color: var(--color-success);
+    border-radius: 20%;
+    display: flex;
+}
+
+.right-section-custom .reminders .notification.deactive .icon{
+    background-color: var(--color-danger);
+}
+
+.right-section-custom .reminders .add-reminder{
+    background-color: var(--color-white);
+    border: 2px dashed var(--color-primary);
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.right-section-custom .reminders .add-reminder:hover{
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.right-section-custom .reminders .add-reminder div{
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+@media screen and (max-width: 1200px) {
+    .container{
+        width: 95%;
+        grid-template-columns: 7rem auto 23rem;
+    }
+
+    aside .logo h2{
+        display: none;
+    }
+
+    aside .sidebar-custom h3{
+        display: none;
+    }
+
+    aside .sidebar-custom a{
+        width: 5.6rem;
+    }
+
+    aside .sidebar-custom a:last-child{
+        position: relative;
+        margin-top: 1.8rem;
+    }
+
+    main .analyse{
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    main .new-users .user-list .user{
+        flex-basis: 40%;
+    }
+
+    main .recent-orders {
+        width: 94%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 2rem 0 0 0.8rem;
+    }
+
+    main .recent-orders table{
+        width: 83vw;
+    }
+
+    main table thead tr th:last-child,
+    main table thead tr th:first-child{
+        display: none;
+    }
+
+    main table tbody tr td:last-child,
+    main table tbody tr td:first-child{
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .container{
+        width: 100%;
+        grid-template-columns: 1.3fr;
+        padding: 0 var(--padding-1);
+    }
+
+    aside{
+        position: fixed;
+        background-color: var(--color-white);
+        width: 15rem;
+        z-index: 3;
+        box-shadow: 1rem 3rem 4rem var(--color-light);
+        height: 100vh;
+        left: -100%;
+        display: none;
+        animation: showMenu 0.4s ease forwards;
+    }
+
+    @keyframes showMenu {
+       to{
+        left: 0;
+       } 
+    }
+
+    aside .logo{
+        margin-left: 1rem;
+    }
+
+    aside .logo h2{
+        display: inline;
+    }
+
+    aside .sidebar-custom h3{
+        display: inline;
+    }
+
+    aside .sidebar-custom a{
+        width: 100%;
+        height: 3.4rem;
+    }
+
+    aside .sidebar-custom a:last-child{
+        position: absolute;
+        bottom: 5rem;
+    }
+
+    aside .toggle .close{
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    main{
+        margin-top: 8rem;
+        padding: 0 1rem;
+    }
+
+    main .new-users .user-list .user{
+        flex-basis: 35%;
+    }
+
+    main .recent-orders{
+        position: relative;
+        margin: 3rem 0 0 0;
+        width: 100%;
+    }
+
+    main .recent-orders table{
+        width: 100%;
+        margin: 0;
+    }
+
+    .right-section-custom{
+        width: 94%;
+        margin: 0 auto 5rem;
+    }
+
+    .right-section-custom .nav-custom{
+        position: fixed;
+        top: 0;
+        left: 0;
+        align-items: center;
+        background-color: var(--color-white);
+        padding: 0 var(--padding-1);
+        height: 4.6rem;
+        width: 100%;
+        z-index: 2;
+        box-shadow: 0 1rem 1rem var(--color-light);
+        margin: 0;
+    }
+
+    .right-section-custom .nav-custom .dark-mode{
+        width: 8rem;
+        position: absolute;
+        left: 66%;
+    }
+
+    .right-section-custom .profile .info{
+        display: none;
+    }
+
+    .right-section-custom .nav-custom button{
+        display: inline-block;
+        background-color: transparent;
+        cursor: pointer;
+        color: var(--color-dark);
+        position: absolute;
+        left: 1rem;
+    }
+
+    .right-section-custom .nav-custom button span{
+        font-size: 2rem;
+    }
+
+}
+
+
+/* Карточки курсов */
+
+.course-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.course-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.course-description {
+    font-size: 14px;
+    color: #666;
+}
+.course-details {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #888;
+}
+
+/* модалка */
+
+.modal {
+    display: none; /* Скрываем модальное окно по умолчанию */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%;
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+
+
+  /* Загрузка */
+
+
+  .spinner-wrapper {
+	position: fixed;
+	z-index: 999999;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: #fff;
+}
+
+.spinner {
+	position: absolute;
+	top: 50%; /* centers the loading animation vertically one the screen */
+	left: 50%; /* centers the loading animation horizontally one the screen */
+	width: 3.75rem;
+	height: 1.25rem;
+	margin: -0.625rem 0 0 -1.875rem; /* is width and height divided by two */ 
+	text-align: center;
+}
+
+.spinner > div {
+	display: inline-block;
+	width: 1rem;
+	height: 1rem;
+	border-radius: 100%;
+	background-color: #5f4dee;
+	-webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+	animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.spinner .bounce1 {
+	-webkit-animation-delay: -0.32s;
+	animation-delay: -0.32s;
+}
+
+.spinner .bounce2 {
+	-webkit-animation-delay: -0.16s;
+	animation-delay: -0.16s;
+}
+
+@-webkit-keyframes sk-bouncedelay {
+	0%, 80%, 100% { -webkit-transform: scale(0); }
+	40% { -webkit-transform: scale(1.0); }
+}
+
+@keyframes sk-bouncedelay {
+	0%, 80%, 100% { 
+		-webkit-transform: scale(0);
+		-ms-transform: scale(0);
+		transform: scale(0);
+	} 40% { 
+		-webkit-transform: scale(1.0);
+		-ms-transform: scale(1.0);
+		transform: scale(1.0);
+	}
+}
+
+
+.numbered-list {
+    list-style-type: none; /* Убираем стандартную нумерацию */
+  }
+  
+.numbered-list li::before {
+    content: "№ "; /* Добавляем символ № перед стандартной нумерацией */
+  }
+  
+  /* Восстановление стандартной нумерации */
+.numbered-list li {
+    counter-increment: my-counter;
+  }
+  
+.numbered-list li::before {
+    content: counter(my-counter) ". "; /* Добавляем стандартную нумерацию */
+  }
+  
+
+  .btn-outline-sm {
+	display: inline-block;
+	padding: 0.875rem 1.5rem 0.875rem 1.5rem;
+	border: 0.125rem solid #5f4dee;
+	border-radius: 2rem;
+	background-color: transparent;
+	color: #5f4dee;
+	font: 700 0.875rem/0 "Open Sans", sans-serif;
+	text-decoration: none;
+	transition: all 0.2s;
+}
+
+.btn-outline-sm:hover {
+	background-color: #5f4dee;
+	color: #fff;
+	text-decoration: none;
+}
+
+
+
+/* Создание сотрудника */
+.screen {		
+	background: linear-gradient(90deg, #5D54A4, #7C78B8);		
+	position: relative;	
+	height: 600px;
+	width: 360px;	
+	box-shadow: 0px 0px 24px #5C5696;
+}
+
+.screen__content {
+	z-index: 1;
+	position: relative;	
+	height: 100%;
+}
+
+
+.screen__background {		
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 0;
+	-webkit-clip-path: inset(0 0 0 0);
+	clip-path: inset(0 0 0 0);	
+}
+
+.screen__background__shape {
+	transform: rotate(45deg);
+	position: absolute;
+}
+
+.screen__background__shape1 {
+	height: 520px;
+	width: 520px;
+	background: #FFF;	
+	top: -50px;
+	right: 120px;	
+	border-radius: 0 72px 0 0;
+}
+
+.screen__background__shape2 {
+	height: 220px;
+	width: 220px;
+	background: #6C63AC;	
+	top: -172px;
+	right: 0;	
+	border-radius: 32px;
+}
+
+.screen__background__shape3 { 
+	height: 540px;
+	width: 190px;
+	background: linear-gradient(270deg, #5D54A4, #6A679E);
+	top: -24px;
+	right: 0;	
+	border-radius: 32px;
+}
+
+.screen__background__shape4 {
+	height: 400px;
+	width: 200px;
+	background: #7E7BB9;	
+	top: 420px;
+	right: 50px;	
+	border-radius: 60px;
+}
+
+.employee {
+	width: 320px;
+	padding: 30px;
+	padding-top: 156px;
+}
+
+
+/* Список сотрудников */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #888;
+    width: 30%;
+}
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #f2f2f2;
+}
+tr:hover {
+    background-color: #f5f5f5;
+}
+.delete-button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+.delete-button:hover {
+    background-color: darkred;
+}
+
+
+@import url('https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css');
+
+:root {
+    --custom-color-primary: #6C9BCF;
+}
+
+/* Переопределение основных переменных Bootstrap */
+:root {
+    --bs-primary: var(--custom-color-primary);
+}
+
+/* Пользовательские стили */
+.custom-element {
+    color: var(--custom-color-primary) !important; /* Пример использования !important */
+}
+
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+
+
+
+
+@media screen and (max-width: 768px) {
+    html, body {
+        font-size: 16px;
+    }
+
+    /* Дополнительные стили для маленьких экранов */
+    body {
+        font-size: 1.2rem; /* Уменьшаем размер шрифта по умолчанию */
+    }
+    .container-custom {
+        grid-template-columns: 1fr; /* Изменяем сетку на одну колонку */
+    }
+    .hide-on-small {
+        display: none;
+    }
+
+    /* Пример: Изменение сетки Bootstrap для маленьких экранов */
+    .col-md-6 {
+        width: 100%; /* Полная ширина на маленьких экранах */
+    }
+    aside {
+        display: block; /* Показываем боковую панель на маленьких экранах */
+        position: fixed;
+        left: -100%; /* Скрываем за экраном по умолчанию */
+        background-color: var(--color-white);
+        width: 15rem;
+        z-index: 3;
+        box-shadow: 1rem 3rem 4rem var(--color-light);
+    }
+    aside .toggle .close {
+        display: inline-block; /* Показываем кнопку закрытия боковой панели */
+        cursor: pointer;
+    }
+    main {
+        margin-top: 8rem;
+        padding: 0 1rem;
+    }
+    main .analyse {
+        grid-template-columns: 1fr; /* Изменяем сетку на одну колонку */
+        gap: 0; /* Убираем отступы между элементами */
+    }
+    main .new-users .user-list .user {
+        flex-basis: 35%; /* Уменьшаем ширину элементов */
+    }
+    main .recent-orders {
+        position: relative;
+        margin: 3rem 0 0 0;
+        width: 100%;
+    }
+    main .recent-orders table {
+        width: 100%;
+        margin: 0;
+    }
+    .right-section-custom {
+        width: 94%;
+        margin: 0 auto 4rem;
+    }
+    .right-section-custom .nav-custom {
+        position: fixed;
+        top: 0;
+        left: 0;
+        align-items: center;
+        background-color: var(--color-white);
+        padding: 0 var(--padding-1);
+        height: 4.6rem;
+        width: 100%;
+        z-index: 2;
+        box-shadow: 0 1rem 1rem var(--color-light);
+        margin: 0;
+    }
+    .right-section-custom .nav-custom .dark-mode {
+        width: 4.4rem;
+        position: absolute;
+        left: 66%;
+    }
+    .right-section-custom .profile .info {
+        display: none;
+    }
+    .right-section-custom .nav-custom button {
+        display: inline-block;
+        background-color: transparent;
+        cursor: pointer;
+        color: var(--color-dark);
+        position: absolute;
+        left: 1rem;
+    }
+    .right-section-custom .nav-custom button span {
+        font-size: 2rem;
+    }
+}
+
+
+
+/* CSS для анимации падающих листьев сакуры */
+
+
+
+
+
+.sakura {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+
+.sakura span {
+	position: absolute;
+	top: -10%;
+	left: 0;
+	width: 0.8vw;
+	height: 0.4vw;
+	border-radius: 5% 80% 10% 80%;
+	background-color: #ffb6c1;
+}
+
+/* add animation */
+.sakura span:nth-child(2n+1) {
+	animation: sakura-anim-1 10s 0s linear infinite;
+}
+
+.sakura span:nth-child(2n+2) {
+	animation: sakura-anim-2 10s 0s linear infinite;
+}
+
+/* side position */
+.sakura span:nth-child(1) {
+	left: 0%;
+}
+
+.sakura span:nth-child(2) {
+	left: 2%;
+}
+
+.sakura span:nth-child(3) {
+	left: 4%;
+}
+
+.sakura span:nth-child(4) {
+	left: 6%;
+}
+
+.sakura span:nth-child(5) {
+	left: 8%;
+}
+
+.sakura span:nth-child(6) {
+	left: 10%;
+}
+
+.sakura span:nth-child(7) {
+	left: 12%;
+}
+
+.sakura span:nth-child(8) {
+	left: 14%;
+}
+
+.sakura span:nth-child(9) {
+	left: 16%;
+}
+
+.sakura span:nth-child(10) {
+	left: 18%;
+}
+
+.sakura span:nth-child(11) {
+	left: 20%;
+}
+
+.sakura span:nth-child(12) {
+	left: 22%;
+}
+
+.sakura span:nth-child(13) {
+	left: 24%;
+}
+
+.sakura span:nth-child(14) {
+	left: 26%;
+}
+
+.sakura span:nth-child(15) {
+	left: 28%;
+}
+
+.sakura span:nth-child(16) {
+	left: 30%;
+}
+
+.sakura span:nth-child(17) {
+	left: 32%;
+}
+
+.sakura span:nth-child(18) {
+	left: 34%;
+}
+
+.sakura span:nth-child(19) {
+	left: 36%;
+}
+
+.sakura span:nth-child(20) {
+	left: 38%;
+}
+
+.sakura span:nth-child(21) {
+	left: 40%;
+}
+
+.sakura span:nth-child(22) {
+	left: 42%;
+}
+
+.sakura span:nth-child(23) {
+	left: 44%;
+}
+
+.sakura span:nth-child(24) {
+	left: 46%;
+}
+
+.sakura span:nth-child(25) {
+	left: 48%;
+}
+
+.sakura span:nth-child(26) {
+	left: 50%;
+}
+
+.sakura span:nth-child(27) {
+	left: 52%;
+}
+
+.sakura span:nth-child(28) {
+	left: 54%;
+}
+
+.sakura span:nth-child(29) {
+	left: 56%;
+}
+
+.sakura span:nth-child(30) {
+	left: 58%;
+}
+
+.sakura span:nth-child(31) {
+	left: 60%;
+}
+
+.sakura span:nth-child(32) {
+	left: 62%;
+}
+
+.sakura span:nth-child(33) {
+	left: 64%;
+}
+
+.sakura span:nth-child(34) {
+	left: 66%;
+}
+
+.sakura span:nth-child(35) {
+	left: 68%;
+}
+
+.sakura span:nth-child(36) {
+	left: 70%;
+}
+
+.sakura span:nth-child(37) {
+	left: 72%;
+}
+
+.sakura span:nth-child(38) {
+	left: 74%;
+}
+
+.sakura span:nth-child(39) {
+	left: 76%;
+}
+
+.sakura span:nth-child(40) {
+	left: 78%;
+}
+
+.sakura span:nth-child(41) {
+	left: 80%;
+}
+
+.sakura span:nth-child(42) {
+	left: 82%;
+}
+
+.sakura span:nth-child(43) {
+	left: 84%;
+}
+
+.sakura span:nth-child(44) {
+	left: 86%;
+}
+
+.sakura span:nth-child(45) {
+	left: 88%;
+}
+
+.sakura span:nth-child(46) {
+	left: 90%;
+}
+
+.sakura span:nth-child(47) {
+	left: 92%;
+}
+
+.sakura span:nth-child(48) {
+	left: 94%;
+}
+
+.sakura span:nth-child(49) {
+	left: 96%;
+}
+
+.sakura span:nth-child(50) {
+	left: 97%;
+}
+
+/* size */
+.sakura span:nth-child(3n+1) {
+	width: 1vw;
+	height: 0.5vw;
+}
+
+.sakura span:nth-child(3n+2) {
+	width: 0.8vw;
+	height: 0.4vw;
+}
+
+.sakura span:nth-child(3n+3) {
+	width: 0.6vw;
+	height: 0.3vw;
+}
+
+/* animation-duration */
+.sakura span:nth-child(4n+1) {
+	animation-duration: 5s;
+}
+
+.sakura span:nth-child(4n+2) {
+	animation-duration: 12s;
+}
+
+.sakura span:nth-child(4n+3) {
+	animation-duration: 8s;
+}
+
+.sakura span:nth-child(4n+4) {
+	animation-duration: 6s;
+}
+
+
+/* animation-delay */
+.sakura span:nth-child(11n+1) {
+	animation-delay: 0s;
+}
+
+.sakura span:nth-child(11n+2) {
+	animation-delay: 9s;
+}
+
+.sakura span:nth-child(11n+3) {
+	animation-delay: 2s;
+}
+
+.sakura span:nth-child(11n+4) {
+	animation-delay: 5s;
+}
+
+.sakura span:nth-child(11n+5) {
+	animation-delay: 6s;
+}
+
+.sakura span:nth-child(11n+6) {
+	animation-delay: 7s;
+}
+
+.sakura span:nth-child(11n+7) {
+	animation-delay: 3s;
+}
+
+.sakura span:nth-child(11n+8) {
+	animation-delay: 1s;
+}
+
+.sakura span:nth-child(11n+9) {
+	animation-delay: 2s;
+}
+
+.sakura span:nth-child(11n+10) {
+	animation-delay: 11s;
+}
+
+.sakura span:nth-child(11n+11) {
+	animation-delay: 10s;
+}
+
+/* animation */
+@keyframes sakura-anim-1 {
+	0% {
+		top: -1%;
+		transform: translateX(0) rotateX(0) rotateY(0);
+	}
+
+	100% {
+		top: 100%;
+		transform: translateX(15vw) rotateX(180deg) rotateY(360deg);
+	}
+}
+
+@keyframes sakura-anim-2 {
+	0% {
+		top: -10%;
+		transform: translateX(0);
+	}
+
+	100% {
+		top: 100%;
+		transform: translateX(-15vw) rotateX(180deg) rotateY(360deg);
+	}
+}
+
+
+/* Темный режим исправления */
+/* Переопределение цветов Bootstrap */
+
+:root {
+    --body-bg: var(--color-background);
+    --body-color: var(--color-dark);
+    --link-color: var(--color-dark);
+    --link-hover-color: var(--color-dark-variant);
+    --btn-primary-bg: var(--color-dark);
+    --btn-primary-color: var(--color-white);
+    --btn-secondary-bg: var(--color-dark-variant);
+    --btn-secondary-color: var(--color-white);
+    --jumbotron-bg: var(--color-dark);
+    --jumbotron-color: var(--color-white);
+    --alert-bg-color: var(--color-dark-variant);
+    --alert-text-color: var(--color-white);
+    --form-bg-color: var(--color-dark-variant);
+    --form-text-color: var(--color-white);
+    --form-placeholder-color: var(--color-dark-variant);
+    --form-border-color: var(--color-dark-variant);
+}
+
+body.dark-mode-variables {
+    background-color: var(--color-background);
+    color: var(--color-dark);
+}
+
+/* Переопределение стилей для кнопки dark-mode */
+.dark-mode {
+    background-color: var(--color-white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 1.6rem;
+    width: 4.2rem;
+    cursor: pointer;
+    border-radius: var(--border-radius-1);
+}
+
+/* Переопределение стилей для иконок в кнопке dark-mode */
+.dark-mode span {
+    font-size: 1.2rem;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-dark); /* Цвет иконок в обычном состоянии */
+}
+
+.dark-mode span.active {
+    background-color: var(--color-dark); /* Фон активной иконки */
+    color: var(--color-white); /* Цвет активной иконки */
+    border-radius: var(--border-radius-1);
+}
+
+
+
+/* сайтбар для админов */
+
+aside .sidebar-custom-right {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-white);
+    box-shadow: var(--box-shadow);
+    border-radius: 15px;
+    height: auto; /* Устанавливаем автоматическую высоту */
+    width: 200px; /* Уменьшаем ширину меню */
+    position: fixed;
+    top: 30%;
+    right: 1rem;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+}
+
+
+aside .sidebar-custom-right:hover {
+    box-shadow: none;
+}
+
+aside .sidebar-custom-right a {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Выравниваем текст по центру */
+    color: var(--color-info-dark);
+    height: 3.7rem;
+    gap: 1rem;
+    position: relative;
+    margin-left: 0;
+    text-align: center; /* Выравниваем текст по центру */
+    width: 100%; /* Занимает всю доступную ширину */
+
+
+    
+}
+
+aside .sidebar-custom-right a span {
+    font-size: 1.6rem;
+    transition: all 0.3s ease;
+}
+
+aside .sidebar-custom-right a:last-child {
+    margin-bottom: auto; /* Чтобы последний элемент выравнивался по верхней границе меню */
+    width: 100%;
+}
+
+aside .sidebar-custom-right a.active {
+    width: 100%;
+    color: var(--color-primary);
+    background-color: var(--color-light);
+    margin-right: 0;
+}
+
+aside .sidebar-custom-right a.message {
+    width: 100%;
+    color: var(--color-primary);
+    margin-right: 0;
+}
+
+aside .sidebar-custom-right a.message::before {
+    content: '';
+    width: 6px;
+    height: 18px;
+}
+
+aside .sidebar-custom-right a.active::before {
+    content: '';
+    width: 6px;
+    height: 18px;
+    background-color: var(--color-primary);
+}
+
+aside .sidebar-custom-right a.active span {
+    color: var(--color-primary);
+    margin-right: calc(1rem - 3px);
+}
+
+aside .sidebar-custom-right a:hover {
+    color: var(--color-primary);
+}
+
+aside .sidebar-custom-right a:hover span {
+    margin-right: 0.6rem;
+}
+
+aside .sidebar-custom-right .message-count {
+    background-color: var(--color-danger);
+    padding: 2px 6px;
+    color: var(--color-white);
+    font-size: 11px;
+    border-radius: var(--border-radius-1);
+}
+
+
+
+
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    width: 100%;
+}
+
+/* Стилизуем кнопку */
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.btn-primary:focus, .btn-primary.focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+}
+
+
+.container2 {
+    width: 25vw; /* Full width of the viewport */
+/* Full height of the viewport */
+    overflow: hidden; /* Hide overflow */
+
+/* Adjust as needed */
+}
+
+/* Set the image style */

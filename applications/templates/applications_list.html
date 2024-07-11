@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mt-4 mb-3">Список заявок</h1>
+    <div class="list-group">
+        {% for application in applications %}
+        {% if application.status == 'approved' %}
+    <a href="{% url 'application_detail' pk=application.pk %}" class="list-group-item list-group-item-action text-success"><b>{{ application.nickname }} ---  Статус заявки:</b> {{ application.get_status_display }}</a>
+{% elif application.status == 'pending' %}
+    <a href="{% url 'application_detail' pk=application.pk %}" class="list-group-item list-group-item-action text-warning"><b>{{ application.nickname }} ---  Статус заявки:</b> {{ application.get_status_display }}</a>
+{% elif application.status == 'rejected' %}
+    <a href="{% url 'application_detail' pk=application.pk %}" class="list-group-item list-group-item-action text-danger"><b>{{ application.nickname }} ---  Статус заявки:</b> {{ application.get_status_display }}</a>
+{% endif %}
+        {% endfor %}
+    </div>
+    {% if applications.has_other_pages %}
+    <ul class="pagination justify-content-center mt-4">
+        {% if applications.has_previous %}
+        <li class="page-item">
+            <a class="page-link" href="?page=1">Первая</a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" href="?page={{ applications.previous_page_number }}">Предыдущая</a>
+        </li>
+        {% endif %}
+        {% for num in applications.paginator.page_range %}
+        <li class="page-item {% if num == applications.number %}active{% endif %}">
+            <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+        </li>
+        {% endfor %}
+        {% if applications.has_next %}
+        <li class="page-item">
+            <a class="page-link" href="?page={{ applications.next_page_number }}">Следующая</a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" href="?page={{ applications.paginator.num_pages }}">Последняя</a>
+        </li>
+        {% endif %}
+    </ul>
+    {% endif %}
+</div>
+{% endblock %}

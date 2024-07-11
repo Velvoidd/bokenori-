@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1 class="mb-4">Список игроков</h1>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Имя пользователя</th>
+                    <th scope="col">Ник нейм</th>
+                    <th scope="col">Префикс</th>
+                    <th scope="col">Статус</th>
+                    <th scope="col">Действие</th> <!-- Добавлен столбец для действий -->
+                </tr>
+            </thead>
+            <tbody>
+                {% for player in players %}
+                <tr>
+                    <td>{{ player.user.username }}</td>
+                    <td>{{ player.nickname }}</td>
+                    <td>{{ player.prefix.name|default:"-" }}</td>
+                    <td>{{ player.status|default:"-" }}</td>
+                    <td>
+                        <a href="{% url 'edit_player' player.id %}" class="btn btn-primary btn-sm">Edit</a> <!-- Кнопка для редактирования -->
+                        <a href="{% url 'confirm_delete' player.id %}" class="btn btn-danger">Delete</a>
+                        
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

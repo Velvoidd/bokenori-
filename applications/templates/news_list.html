@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1 class="mb-4">Список новостей</h1>
+    <div class="row">
+        {% for news_item in news %}
+        <div class="col-md-4 mb-4"> 
+            <div class="card {% if is_dark_mode %}dark-card{% endif %}">
+                <img src="{{ news_item.image.url }}" class="card-img-top" alt="{{ news_item.title }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ news_item.title }}</h5>
+                    <p class="card-text">{{ news_item.description }}</p>
+                    <p class="card-text"><small class="text-muted">{{ news_item.date_published }}</small></p>
+                    <p class="card-text">Автор: {{ news_item.author }}</p>
+                    <a href="{% url 'news_detail' pk=news_item.pk %}" class="btn btn-primary">Подробнее</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

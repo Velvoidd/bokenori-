@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Информация о сервере</h1>
+
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#server-info">Информация о сервере</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#plugins">Плагины</a>
+        </li>
+    </ul>
+
+    <div class="tab-content mt-3">
+        <div class="tab-pane fade show active" id="server-info">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h2 class="card-title">IP сервера</h2>
+                            <hr>
+
+                            <p class="card-text"><b>IP: </b>{{ server_ip }}</p>
+                            <p class="card-text"><b>Цифровой IP: </b>188.243.58.67:25002</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="tab-pane fade" id="plugins">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 class="card-title">Плагины</h3>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <h5>CoreProtect</h5>
+                            <p>CoreProtect — это плагин для SMP-сервера под управлением Bukkit, регистрирующий изменения блоков. С его помощью вы можете просмотреть историю изменений блоков, то есть кто и когда поставил/удалил блок, и откатить/вернуть изменения блоков и другое.</p>
+                        </li>
+                        <li class="list-group-item">
+                            <h5>Armor Stand Editor</h5>
+                            <p>Armor Stand Editor - это плагин, позволяющий игроку изменять вид стойки для брони, используя кремень. Нажатие правой кнопкой мыши с кремнем в руке вызовет GUI, где Вы можете выбрать одно из действий для стойки. После того, как Вы выбрали действие, подойдите к стойке для брони и нажмите на нее правой кнопкой мыши, чтобы действие применилось!</p>
+    
+                        </li>
+                        <li class="list-group-item">
+                            <h5>Simple Voice Chat   </h5>
+                            <p>Simple Voice Chat - добавит в игру простой внутриигровой голосовой чат, вы сможете общаться со своими друзьями голосом, мод имеет все необходимые функции.</p>
+
+                        </li>
+                        <li class="list-group-item">
+                            <h5>GSit</h5>
+                            <p>Плагин, который добавляет новые возможности взаимодействия с игровым миром, позволяя игрокам сидеть, лежать и использовать другие дополнительные действия.</p>
+           
+                        </li>
+                        <!-- Добавьте другие плагины здесь -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,151 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Solid Template</title>
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,600" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+	<script src="https://unpkg.com/animejs@3.0.1/lib/anime.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+    <link rel="icon" type="image/png" href="{% static 'images/image.png' %}">
+</head>
+<body class="is-boxed has-animations">
+    <div class="body-wrap">
+        <header class="site-header">
+            <div class="container">
+                <div class="site-header-inner">
+                    <div class="brand header-brand">
+                        <h1 class="m-0">
+							<a href="#">
+								<img class="header-logo-image" src="{% static '/imagess/logo.svg' %}" alt="Logo">
+                            </a>
+                        </h1>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="container">
+                    <div class="hero-inner">
+						<div class="hero-copy">
+	                        <h1 class="hero-title mt-0">BokeNori</h1>
+	                        <p class="hero-paragraph">Наш ванильный сервер по майнкрафту, для того чтобы попасть к нам вам нужно зарегистрироваться или же войти в свой аккаунт! Подробная инструкция как попасть на наш сервер будет ниже!</p>
+	                        <div class="hero-cta"><a class="button button-primary" href="{% url 'registration_page' %}">зарегистрироваться</a><a class="button" href="{% url 'login' %}">Войти</a></div>
+						</div>
+						<div class="hero-figure anime-element">
+							<svg class="placeholder" width="528" height="396" viewBox="0 0 528 396">
+								<rect width="528" height="396" style="fill:transparent;" />
+							</svg>
+							<div class="hero-figure-box hero-figure-box-01" data-rotation="45deg"></div>
+							<div class="hero-figure-box hero-figure-box-02" data-rotation="-45deg"></div>
+							<div class="hero-figure-box hero-figure-box-03" data-rotation="0deg"></div>
+							<div class="hero-figure-box hero-figure-box-04" data-rotation="-135deg"></div>
+							<div class="hero-figure-box hero-figure-box-05"></div>
+							<div class="hero-figure-box hero-figure-box-06"></div>
+							<div class="hero-figure-box hero-figure-box-07"></div>
+							<div class="hero-figure-box hero-figure-box-08" data-rotation="-22deg"></div>
+							<div class="hero-figure-box hero-figure-box-09" data-rotation="-52deg"></div>
+							<div class="hero-figure-box hero-figure-box-10" data-rotation="-50deg"></div>
+						</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="features section">
+                <div class="container">
+					<div class="features-inner section-inner has-bottom-divider">
+                        <div class="features-wrap">
+                            <div class="feature text-center is-revealing">
+                                <div class="feature-inner">
+                                    <div class="feature-icon">
+										<img src="{% static 'imagess/feature-icon-01.svg' %}" alt="Feature 01">
+                                    </div>
+                                    <h4 class="feature-title mt-24">Регистрация или вход</h4>
+                                    <p class="text-sm mb-0">Пожалуйста зарегестрируйте себе аккаунт, или же войдите в свой аккаунт который вы регистрировали. Выше есть кнопки для регистрации и входа. Вам нужно будет вписать свой логин и пароль.</p>
+                                </div>
+                            </div>
+							<div class="feature text-center is-revealing">
+                                <div class="feature-inner">
+                                    <div class="feature-icon">
+										<img src="{% static 'imagess/feature-icon-02.svg' %}" alt="Feature 02">
+                                    </div>
+                                    <h4 class="feature-title mt-24">Заявка</h4>
+                                    <p class="text-sm mb-0">После регистрации или входа в аккаунт, вы должны написать завявку на наш сервер. У нас есть отдельная страница для этого где вы должны заполнить все нужные поля.</p>
+                                </div>
+                            </div>
+                            <div class="feature text-center is-revealing">
+                                <div class="feature-inner">
+                                    <div class="feature-icon">
+										<img src="{% static 'imagess/feature-icon-03.svg' %}" alt="Feature 03">
+                                    </div>
+                                    <h4 class="feature-title mt-24">Процесс</h4>
+                                    <p class="text-sm mb-0">После написания заявки, администрация проверит вашу заявку в скором времени, главное терпение! Процесс заявки вы можете наблюдать в той же странице где вы писали заявку!</p>
+                                </div>
+                            </div>
+                            <div class="feature text-center is-revealing">
+                                <div class="feature-inner">
+                                    <div class="feature-icon">
+										<img src="{% static 'imagess/feature-icon-04.svg' %}" alt="Feature 04">
+                                    </div>
+                                    <h4 class="feature-title mt-24">Принятие</h4>
+                                    <p class="text-sm mb-0">После принятия заявки, вы получите свою уникальную ссылку приглошения на наш дискорд сервер! Ссылку вы можете получить в той же странице где писали заявку на сервер!</p>
+                                </div>
+                            </div>
+							<div class="feature text-center is-revealing">
+                                <div class="feature-inner">
+                                    <div class="feature-icon">
+										<img src="{% static 'imagess/feature-icon-05.svg' %}" alt="Feature 05">
+                                    </div>
+                                    <h4 class="feature-title mt-24">Информация</h4>
+                                    <p class="text-sm mb-0">Информацию о сервер и его IP вы можете получить на странице с информацией. А так же там будет информация о рекомендуюмых модах и плагины установленние на нашем сервере.</p>
+                                </div>
+                            </div>
+                            <div class="feature text-center is-revealing">
+                                <div class="feature-inner">
+                                    <div class="feature-icon">
+										<img src="{% static 'imagess/feature-icon-06.svg' %}" alt="Feature 06">
+                                    </div>
+                                    <h4 class="feature-title mt-24">Вход на сервер</h4>
+                                    <p class="text-sm mb-0">Наш сервер на версии 1.20.4. Вам нужно установить данную версию (Рекомендуется версия с Fabric). Дальше вам нужно добавить в список серверов наш сервер.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="pricing section">
+                <div class="container-sm">
+                    <div class="pricing-inner section-inner">
+                        <div class="pricing-header text-center">
+                            <h2 class="section-title mt-0">Главное</h2>
+                            <p class="section-paragraph mb-0">Прочитайте правила нашего сервера чтобы избежать будующих недорозумений! Прошу учесть и соблюдать правила</p>
+                        </div>
+						
+
+        </main>
+
+        <footer class="site-footer">
+            <div class="container">
+                <div class="site-footer-inner">
+                    <div class="brand footer-brand">
+						<a href="#">
+							<img class="header-logo-image" src="{% static 'imagess/logo.svg' %}" alt="Logo">
+						</a>
+                    </div>
+                    
+
+                    <div class="footer-copyright">&copy; 2024 by M1key, Джей, Gal1, Velvoid <br> Под руководством FanHesher17</div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="{% static 'js/main.min.js' %}"></script>
+</body>
+</html>
